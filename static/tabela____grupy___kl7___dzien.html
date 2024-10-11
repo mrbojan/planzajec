@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="content-language" content="pl">
+<style>
+table, th, td {
+  border: 1px solid #666;
+  border-collapse: collapse;
+}
+td.lewy {
+  border-left: 6px solid #444;
+}
+th.lewy {
+  border-left: 6px solid #444;
+}
+td.podlewy {
+  border-left: 2px solid black;
+}
+th.podlewy {
+  border-left: 2px solid black;
+}
+div#okienko {
+    position: fixed; top: 70%; bottom: 100%;
+    border: 1px solid #660;
+    background-color: #ee0;
+    display: block;
+    height: 300px;
+    width: 100%;
+}
+div#lewe {
+    width:25%;
+    display:block;
+    float:left;
+    position:relative;
+}
+div#prawe {
+    width:70%;
+    display:block;
+    float:left;
+    text-align:left;
+    position:relative;
+}
+span.blad {
+    color:#f00;
+}
+label {
+    margin: 5px;
+}
+.odsun {
+    padding-bottom: 10px;
+}
+.AngGreen { background-color: #eee;  padding: 5px;}
+.AngLaurence { background-color: #eed;  padding: 5px;}
+.AngOrange { background-color: #eec;  padding: 5px;}
+.AngRed { background-color: #eeb;  padding: 5px;}
+.AngYellow { background-color: #ede;  padding: 5px;}
+.Angielski { background-color: #edd;  padding: 5px;}
+.BiZ { background-color: #edc;  padding: 5px;}
+.Biologia { background-color: #edb;  padding: 5px;}
+.Chemia { background-color: #ece;  padding: 5px;}
+.Dyzury { background-color: #ecd;  padding: 5px;}
+.EdukacjaDomowa { background-color: #ecc;  padding: 5px;}
+.Fizyka { background-color: #ecb;  padding: 5px;}
+.Geografia { background-color: #ebe;  padding: 5px;}
+.GodzWych { background-color: #ebd;  padding: 5px;}
+.HiT { background-color: #ebc;  padding: 5px;}
+.Historia { background-color: #ebb;  padding: 5px;}
+.Hiszpanski { background-color: #dee;  padding: 5px;}
+.Informatyka { background-color: #ded;  padding: 5px;}
+.InformatykaGr1 { background-color: #dec;  padding: 5px;}
+.InformatykaGr2 { background-color: #deb;  padding: 5px;}
+.Klub { background-color: #dde;  padding: 5px;}
+.KlubPilkarski { background-color: #ddd;  padding: 5px;}
+.KlubTaneczny { background-color: #ddc;  padding: 5px;}
+.Klubprogramowanie { background-color: #ddb;  padding: 5px;}
+.Klubrysowanie { background-color: #dce;  padding: 5px;}
+.Klubszachy { background-color: #dcd;  padding: 5px;}
+.Krag { background-color: #dcc;  padding: 5px;}
+.KragApteczka { background-color: #dcb;  padding: 5px;}
+.Krąg { background-color: #dbe;  padding: 5px;}
+.Matematyka { background-color: #dbd;  padding: 5px;}
+.Muzyka { background-color: #dbc;  padding: 5px;}
+.Niemiecki { background-color: #dbb;  padding: 5px;}
+.Obiad { background-color: #cee;  padding: 5px;}
+.OnLine { background-color: #ced;  padding: 5px;}
+.PAM { background-color: #cec;  padding: 5px;}
+.PP { background-color: #ceb;  padding: 5px;}
+.PW { background-color: #cde;  padding: 5px;}
+.PWzPolski { background-color: #cdd;  padding: 5px;}
+.Plastyka { background-color: #cdc;  padding: 5px;}
+.Podwórko { background-color: #cdb;  padding: 5px;}
+.Polski { background-color: #cce;  padding: 5px;}
+.Polskiwyrownawcze { background-color: #ccd;  padding: 5px;}
+.Przerwa { background-color: #ccc;  padding: 5px;}
+.Psychoedukacja { background-color: #ccb;  padding: 5px;}
+.R_WOS { background-color: #cbe;  padding: 5px;}
+.R_biol { background-color: #cbd;  padding: 5px;}
+.R_chem { background-color: #cbc;  padding: 5px;}
+.R_hist { background-color: #cbb;  padding: 5px;}
+.R_inf { background-color: #bee;  padding: 5px;}
+.R_mat { background-color: #bed;  padding: 5px;}
+.R_pol { background-color: #bec;  padding: 5px;}
+.Sprzatanie { background-color: #beb;  padding: 5px;}
+.Sprzątanie { background-color: #bde;  padding: 5px;}
+.StoryTime { background-color: #bdd;  padding: 5px;}
+.Technika { background-color: #bdc;  padding: 5px;}
+.WF { background-color: #bdb;  padding: 5px;}
+.WOS { background-color: #bce;  padding: 5px;}
+.Wspomaganie { background-color: #bcd;  padding: 5px;}
+.WypuszczanieDzieci { background-color: #bcc;  padding: 5px;}
+.ZespolMuzyczny { background-color: #bcb;  padding: 5px;}
+._pusta { background-color: #bbe;  padding: 5px;}
+.angielski { background-color: #bbd;  padding: 5px;}
+.biologia { background-color: #bbc;  padding: 5px;}
+.chemia { background-color: #bbb;  padding: 5px;}
+.eksperymenty { background-color: #eee;  padding: 5px;}
+.fizyka { background-color: #eed;  padding: 5px;}
+.geografia { background-color: #eec;  padding: 5px;}
+.historia { background-color: #eeb;  padding: 5px;}
+.hisz { background-color: #ede;  padding: 5px;}
+.informatyka { background-color: #edd;  padding: 5px;}
+.kawiarnia { background-color: #edc;  padding: 5px;}
+.kodowanie { background-color: #edb;  padding: 5px;}
+.lek_wych { background-color: #ece;  padding: 5px;}
+.matematyka { background-color: #ecd;  padding: 5px;}
+.migowy { background-color: #ecc;  padding: 5px;}
+.muzyka { background-color: #ecb;  padding: 5px;}
+.narada4_7 { background-color: #ebe;  padding: 5px;}
+.narada8 { background-color: #ebd;  padding: 5px;}
+.niem { background-color: #ebc;  padding: 5px;}
+.obiad { background-color: #fff;  padding: 5px;}
+.plastyka { background-color: #dee;  padding: 5px;}
+.podwórko { background-color: #ded;  padding: 5px;}
+.polski { background-color: #dec;  padding: 5px;}
+.przejazd { background-color: #deb;  padding: 5px;}
+.psychoed { background-color: #dde;  padding: 5px;}
+.sport { background-color: #ddd;  padding: 5px;}
+.sprzątanie { background-color: #fff;  padding: 5px;}
+.szachy { background-color: #ddb;  padding: 5px;}
+.wf { background-color: #dce;  padding: 5px;}
+.świetlica { background-color: #eee;  padding: 5px;}
+
+</style>
+</head>
+<body>
+<h1>grupy = kl7</h1><table style="border: 1px solid black">
+<tr><th></th><th colspan="4" class="lewy">pn</th><th colspan="2" class="lewy">wt</th><th colspan="2" class="lewy">śr</th><th colspan="3" class="lewy">cz</th><th colspan="3" class="lewy">pt</th></tr>
+<tr><td style="font-size:30%;">7:30</td><td rowspan="6" colspan="4" class="świetlica lewy">świetlica<br>
+KingaM<br>
+kl4, kl5, kl6, kl7, kl8<br>
+piętro46<br>
+7:30--8:00</td><td rowspan="6" colspan="2" class="świetlica lewy">świetlica<br>
+DominikaB<br>
+kl4, kl5, kl6, kl7, kl8<br>
+piętro46<br>
+7:30--8:00</td><td rowspan="6" colspan="2" class="świetlica lewy">świetlica<br>
+BeataD<br>
+kl4, kl5, kl6, kl7, kl8<br>
+piętro46<br>
+7:30--8:00</td><td rowspan="6" colspan="3" class="świetlica lewy">świetlica<br>
+MartynaB<br>
+kl4, kl5, kl6, kl7, kl8<br>
+piętro46<br>
+7:30--8:00</td><td rowspan="6" colspan="3" class="świetlica lewy">świetlica<br>
+KingaS<br>
+kl4, kl5, kl6, kl7, kl8<br>
+piętro46<br>
+7:30--8:00</td></tr>
+<tr><td style="font-size:30%;">7:35</td></tr>
+<tr><td style="font-size:30%;">7:40</td></tr>
+<tr><td style="font-size:30%;">7:45</td></tr>
+<tr><td style="font-size:30%;">7:50</td></tr>
+<tr><td style="font-size:30%;">7:55</td></tr>
+<tr><td style="font-size:30%;">8:00</td><td rowspan="6" colspan="4" class="świetlica lewy">świetlica<br>
+KingaM, DominikaB<br>
+kl4, kl5, kl6, kl7<br>
+piętro46<br>
+8:00--8:30</td><td rowspan="6" colspan="2" class="świetlica lewy">świetlica<br>
+DominikaB<br>
+kl4, kl5, kl6, kl7<br>
+piętro46<br>
+8:00--8:30</td><td rowspan="6" colspan="2" class="świetlica lewy">świetlica<br>
+KingaM, KingaS<br>
+kl4, kl5, kl6, kl7<br>
+piętro46<br>
+8:00--8:30</td><td rowspan="6" colspan="3" class="świetlica lewy">świetlica<br>
+MartynaB, BartekB<br>
+kl4, kl5, kl6, kl7<br>
+piętro46<br>
+8:00--8:30</td><td rowspan="6" colspan="3" class="świetlica lewy">świetlica<br>
+KingaS, KingaM<br>
+kl4, kl5, kl6, kl7<br>
+piętro46<br>
+8:00--8:30</td></tr>
+<tr><td style="font-size:30%;">8:05</td></tr>
+<tr><td style="font-size:30%;">8:10</td></tr>
+<tr><td style="font-size:30%;">8:15</td></tr>
+<tr><td style="font-size:30%;">8:20</td></tr>
+<tr><td style="font-size:30%;">8:25</td></tr>
+<tr><td style="font-size:30%;">8:30</td><td rowspan="9" colspan="4" class="PW lewy">PW<br>
+BeataD, DominikaB<br>
+kl7<br>
+salaB <br>
+8:30--9:15</td><td rowspan="9" colspan="2" class="PW lewy">PW<br>
+BeataD, DominikaB<br>
+kl7<br>
+salaB <br>
+8:30--9:15</td><td rowspan="9" colspan="2" class="PW lewy">PW<br>
+BeataD, WeronikaK<br>
+kl7<br>
+salaB<br>
+8:30--9:15</td><td rowspan="9" colspan="3" class="PW lewy">PW<br>
+DominikaB, BartekB<br>
+kl7<br>
+salaB<br>
+8:30--9:15</td><td rowspan="9" colspan="3" class="PW lewy">PW<br>
+DominikaB<br>
+kl7<br>
+salaB<br>
+8:30--9:15</td></tr>
+<tr><td style="font-size:30%;">8:35</td></tr>
+<tr><td style="font-size:30%;">8:40</td></tr>
+<tr><td style="font-size:30%;">8:45</td></tr>
+<tr><td style="font-size:30%;">8:50</td></tr>
+<tr><td style="font-size:30%;">8:55</td></tr>
+<tr><td style="font-size:30%;">9:00</td></tr>
+<tr><td style="font-size:30%;">9:05</td></tr>
+<tr><td style="font-size:30%;">9:10</td></tr>
+<tr><td style="font-size:30%;">9:15</td><td rowspan="12" colspan="4" class="Biologia lewy">Biologia<br>
+AgaW<br>
+kl7<br>
+salaB <br>
+9:15--10:15</td><td rowspan="12" colspan="2" class="Geografia lewy">Geografia<br>
+OlaM<br>
+kl7<br>
+Pieczara <br>
+9:15--10:15</td><td rowspan="12" colspan="2" class="Chemia lewy">Chemia<br>
+AgaW<br>
+kl7<br>
+salaB<br>
+9:15--10:15</td><td rowspan="12" colspan="3" class="Fizyka lewy">Fizyka<br>
+BartekB<br>
+kl7<br>
+salaB<br>
+9:15--10:15</td><td rowspan="12" colspan="3" class="Historia lewy">Historia<br>
+AlaB<br>
+kl7<br>
+salaB<br>
+9:15--10:15</td></tr>
+<tr><td style="font-size:30%;">9:20</td></tr>
+<tr><td style="font-size:30%;">9:25</td></tr>
+<tr><td style="font-size:30%;">9:30</td></tr>
+<tr><td style="font-size:30%;">9:35</td></tr>
+<tr><td style="font-size:30%;">9:40</td></tr>
+<tr><td style="font-size:30%;">9:45</td></tr>
+<tr><td style="font-size:30%;">9:50</td></tr>
+<tr><td style="font-size:30%;">9:55</td></tr>
+<tr><td style="font-size:30%;">10:00</td></tr>
+<tr><td style="font-size:30%;">10:05</td></tr>
+<tr><td style="font-size:30%;">10:10</td></tr>
+<tr><td style="font-size:30%;">10:15</td><td rowspan="3" colspan="4" class="Przerwa lewy">Przerwa<br>
+DominikaB<br>
+kl7<br>
+salaB <br>
+10:15--10:30</td><td rowspan="3" colspan="2" class="Przerwa lewy">Przerwa<br>
+DominikaB<br>
+kl7<br>
+Pieczara <br>
+10:15--10:30</td><td rowspan="3" colspan="2" class="Przerwa lewy">Przerwa<br>
+DominikaB<br>
+kl7<br>
+salaB<br>
+10:15--10:30</td><td rowspan="3" colspan="3" class="Przerwa lewy">Przerwa<br>
+DominikaB<br>
+kl7<br>
+salaB<br>
+10:15--10:30</td><td rowspan="3" colspan="3" class="Przerwa lewy">Przerwa<br>
+DominikaB<br>
+kl7<br>
+salaB<br>
+10:15--10:30</td></tr>
+<tr><td style="font-size:30%;">10:20</td></tr>
+<tr><td style="font-size:30%;">10:25</td></tr>
+<tr><td style="font-size:30%;">10:30</td><td rowspan="8" colspan="4" class="Polski lewy">Polski<br>
+WeronikaK<br>
+kl7<br>
+Pieczara <br>
+10:30--11:10</td><td rowspan="8" colspan="2" class="Polski lewy">Polski<br>
+WeronikaK<br>
+kl7<br>
+Pieczara <br>
+10:30--11:10</td><td rowspan="8" colspan="2" class="Polski lewy">Polski<br>
+WeronikaK<br>
+kl7<br>
+Pieczara<br>
+10:30--11:10</td><td rowspan="6" colspan="3" class="Angielski lewy">Angielski<br>
+Laurence<br>
+kl7<br>
+Pieczara<br>
+10:30--11:00</td><td rowspan="8" colspan="3" class="Matematyka lewy">Matematyka<br>
+BeataD<br>
+kl7<br>
+Pieczara<br>
+10:30--11:10</td></tr>
+<tr><td style="font-size:30%;">10:35</td></tr>
+<tr><td style="font-size:30%;">10:40</td></tr>
+<tr><td style="font-size:30%;">10:45</td></tr>
+<tr><td style="font-size:30%;">10:50</td></tr>
+<tr><td style="font-size:30%;">10:55</td></tr>
+<tr><td style="font-size:30%;">11:00</td><td class="lewy"></td>
+<td></td>
+<td></td></tr>
+<tr><td style="font-size:30%;">11:05</td><td rowspan="8" colspan="3" class="Angielski lewy">Angielski<br>
+AgataK<br>
+kl7<br>
+Pieczara<br>
+11:05--11:45</td></tr>
+<tr><td style="font-size:30%;">11:10</td><td rowspan="8" colspan="4" class="Matematyka lewy">Matematyka<br>
+BeataD<br>
+kl7<br>
+Pieczara <br>
+11:10--11:50</td><td rowspan="8" colspan="2" class="Angielski lewy">Angielski<br>
+AgataK<br>
+kl7<br>
+Pieczara  <br>
+11:10--11:50</td><td rowspan="8" colspan="2" class="PW lewy">PW<br>
+WeronikaK, AgataK, BeataD<br>
+kl7<br>
+Pieczara<br>
+11:10--11:50</td><td rowspan="8" colspan="3" class="Polski lewy">Polski<br>
+WeronikaK<br>
+kl7<br>
+Pieczara<br>
+11:10--11:50</td></tr>
+<tr><td style="font-size:30%;">11:15</td></tr>
+<tr><td style="font-size:30%;">11:20</td></tr>
+<tr><td style="font-size:30%;">11:25</td></tr>
+<tr><td style="font-size:30%;">11:30</td></tr>
+<tr><td style="font-size:30%;">11:35</td></tr>
+<tr><td style="font-size:30%;">11:40</td></tr>
+<tr><td style="font-size:30%;">11:45</td><td class="lewy"></td>
+<td></td>
+<td></td></tr>
+<tr><td style="font-size:30%;">11:50</td><td rowspan="8" colspan="4" class="Angielski lewy">Angielski<br>
+AgataK<br>
+kl7<br>
+Pieczara <br>
+11:50--12:30</td><td rowspan="8" colspan="2" class="Matematyka lewy">Matematyka<br>
+BeataD<br>
+kl7<br>
+Pieczara  <br>
+11:50--12:30</td><td rowspan="8" colspan="2" class="Angielski lewy">Angielski<br>
+AgataK<br>
+kl7<br>
+Pieczara<br>
+11:50--12:30</td><td rowspan="8" colspan="3" class="Matematyka lewy">Matematyka<br>
+BeataD<br>
+kl7<br>
+Pieczara<br>
+11:50--12:30</td><td rowspan="8" colspan="3" class="Polski lewy">Polski<br>
+WeronikaK<br>
+kl7<br>
+Pieczara<br>
+11:50--12:30</td></tr>
+<tr><td style="font-size:30%;">11:55</td></tr>
+<tr><td style="font-size:30%;">12:00</td></tr>
+<tr><td style="font-size:30%;">12:05</td></tr>
+<tr><td style="font-size:30%;">12:10</td></tr>
+<tr><td style="font-size:30%;">12:15</td></tr>
+<tr><td style="font-size:30%;">12:20</td></tr>
+<tr><td style="font-size:30%;">12:25</td></tr>
+<tr><td style="font-size:30%;">12:30</td><td rowspan="6" colspan="4" class="Krag lewy">Krag<br>
+KingaM, DominikaB, KingaS, AgaBu<br>
+kl4, kl5, kl6, kl7<br>
+SalaA, SalaB<br>
+12:30--13:00</td><td rowspan="6" colspan="2" class="Krag lewy">Krag<br>
+KingaM, DominikaB, KingaS, AgaBu<br>
+kl4, kl5, kl6, kl7<br>
+SalaA, SalaB<br>
+12:30--13:00</td><td rowspan="6" colspan="2" class="Krag lewy">Krag<br>
+KingaM, DominikaB, KingaS, AgaBu<br>
+kl4, kl5, kl6, kl7<br>
+SalaA, SalaB<br>
+12:30--13:00</td><td rowspan="9" colspan="3" class="KragApteczka lewy">Krag-Apteczka<br>
+KingaM, DominikaB<br>
+kl6, kl7<br>
+SalaB<br>
+12:30--13:15</td><td rowspan="9" colspan="3" class="WF lewy">WF<br>
+PawełU, KingaS, DominikaB<br>
+kl6, kl7<br>
+SalaGim<br>
+12:30--13:15</td></tr>
+<tr><td style="font-size:30%;">12:35</td></tr>
+<tr><td style="font-size:30%;">12:40</td></tr>
+<tr><td style="font-size:30%;">12:45</td></tr>
+<tr><td style="font-size:30%;">12:50</td></tr>
+<tr><td style="font-size:30%;">12:55</td></tr>
+<tr><td style="font-size:30%;">13:00</td><td rowspan="9" colspan="4" class="WF lewy">WF<br>
+PawełU<br>
+kl6, kl7<br>
+SalaGimnastyczna<br>
+13:00--13:45</td><td rowspan="9" colspan="2" class="WF lewy">WF<br>
+KingaM, KingaS<br>
+kl6, kl7<br>
+Podwórko<br>
+13:00--13:45</td><td rowspan="9" colspan="2" class="WF lewy">WF<br>
+PawełU<br>
+kl6, kl7<br>
+SalaGimnastyczna<br>
+13:00--13:45</td></tr>
+<tr><td style="font-size:30%;">13:05</td></tr>
+<tr><td style="font-size:30%;">13:10</td></tr>
+<tr><td style="font-size:30%;">13:15</td><td rowspan="6" colspan="3" class="Obiad lewy">Obiad<br>
+KingaM, DominikaB<br>
+kl6, kl7<br>
+<br>
+13:15--13:45</td><td rowspan="6" colspan="3" class="Obiad lewy">Obiad<br>
+DominikaB, BartekB, AgaW<br>
+kl4, kl5, kl6, kl7<br>
+-<br>
+13:15--13:45</td></tr>
+<tr><td style="font-size:30%;">13:20</td></tr>
+<tr><td style="font-size:30%;">13:25</td></tr>
+<tr><td style="font-size:30%;">13:30</td></tr>
+<tr><td style="font-size:30%;">13:35</td></tr>
+<tr><td style="font-size:30%;">13:40</td></tr>
+<tr><td style="font-size:30%;">13:45</td><td rowspan="6" colspan="4" class="Obiad lewy">Obiad<br>
+JagodaNB, JuliuszP<br>
+kl4, kl5, kl6, kl7<br>
+<br>
+13:45--14:15</td><td rowspan="6" colspan="2" class="Obiad lewy">Obiad<br>
+AgaBu, AlaB, KingaS<br>
+kl4, kl5, kl6, kl7<br>
+<br>
+13:45--14:15</td><td rowspan="6" colspan="2" class="Obiad lewy">Obiad<br>
+AgaW, DominikaB<br>
+kl4, kl5, kl6, kl7<br>
+<br>
+13:45--14:15</td><td rowspan="9" class="Hiszpanski lewy">Hiszpanski<br>
+AgnieszkaZ<br>
+kl7<br>
+Pieczara <br>
+13:45--14:30</td>
+<td></td>
+<td></td><td rowspan="3" colspan="3" class="Sprzatanie lewy">Sprzatanie<br>
+DominikaB, BartekB<br>
+kl4, kl5, kl6, kl7<br>
+-<br>
+13:45--14:00</td></tr>
+<tr><td style="font-size:30%;">13:50</td><td></td>
+<td></td></tr>
+<tr><td style="font-size:30%;">13:55</td><td></td>
+<td></td></tr>
+<tr><td style="font-size:30%;">14:00</td><td></td>
+<td></td><td class="lewy"></td>
+<td></td>
+<td></td></tr>
+<tr><td style="font-size:30%;">14:05</td><td></td>
+<td></td><td class="lewy"></td>
+<td></td>
+<td></td></tr>
+<tr><td style="font-size:30%;">14:10</td><td></td>
+<td></td><td class="lewy"></td>
+<td></td>
+<td></td></tr>
+<tr><td style="font-size:30%;">14:15</td><td rowspan="18" class="Plastyka lewy">Plastyka<br>
+JagodaNB<br>
+kl4, kl5, kl6, kl7<br>
+<br>
+14:15--15:45</td>
+<td rowspan="18" class="Muzyka">Muzyka<br>
+ AniaK<br>
+kl4, kl5, kl6, kl7<br>
+<br>
+14:15--15:45</td>
+<td rowspan="18" class="Technika">Technika<br>
+ JuliuszP<br>
+kl4, kl5, kl6, kl7<br>
+Stolarnia<br>
+14:15--15:45</td>
+<td rowspan="18" class="Informatyka">Informatyka<br>
+ BartekB<br>
+kl4, kl5, kl6, kl7<br>
+SalaPrzyszlosci<br>
+14:15--15:45</td><td rowspan="18" class="ZespolMuzyczny lewy">ZespolMuzyczny<br>
+AniaK, AgaBu<br>
+kl4, kl5, kl6, kl7<br>
+<br>
+14:15--15:45</td>
+<td rowspan="18" class="Klub">Klub<br>
+AgaW, BartekB,  AlaB<br>
+kl4, kl5, kl6, kl7<br>
+<br>
+14:15--15:45</td><td rowspan="9" class="Klub lewy">Klub<br>
+JuliuszP<br>
+kl4, kl5, kl6, kl7<br>
+<br>
+14:15--15:00</td>
+<td rowspan="18" class="Klub">Klub<br>
+KingaM, AgaW, DominikaB<br>
+kl4, kl5, kl6, kl7<br>
+<br>
+14:15--15:45</td><td rowspan="18" class="Klub">Klub<br>
+AgaBu<br>
+kl4, kl5, kl6, kl7<br>
+<br>
+14:15--15:45</td>
+<td></td><td rowspan="18" class="Klubrysowanie lewy">Klub-rysowanie<br>
+ DominikaB<br>
+kl4, kl5, kl6, kl7<br>
+-<br>
+14:15--15:45</td>
+<td rowspan="18" class="Klubprogramowanie">Klub-programowanie<br>
+BartekB<br>
+kl4, kl5, kl6, kl7<br>
+SalaPrzyszlosci<br>
+14:15--15:45</td>
+<td rowspan="18" class="Klubszachy">Klub-szachy<br>
+AgaW<br>
+kl4, kl5, kl6, kl7<br>
+<br>
+14:15--15:45</td></tr>
+<tr><td style="font-size:30%;">14:20</td><td></td></tr>
+<tr><td style="font-size:30%;">14:25</td><td></td></tr>
+<tr><td style="font-size:30%;">14:30</td><td rowspan="9" class="Hiszpanski lewy">Hiszpanski<br>
+AgnieszkaZ<br>
+kl7, kl8<br>
+Pieczara  <br>
+14:30--15:15</td>
+<td></td></tr>
+<tr><td style="font-size:30%;">14:35</td><td></td></tr>
+<tr><td style="font-size:30%;">14:40</td><td></td></tr>
+<tr><td style="font-size:30%;">14:45</td><td></td></tr>
+<tr><td style="font-size:30%;">14:50</td><td></td></tr>
+<tr><td style="font-size:30%;">14:55</td><td></td></tr>
+<tr><td style="font-size:30%;">15:00</td><td class="lewy"></td><td rowspan="9" class="KlubTaneczny">KlubTaneczny<br>
+KingaS<br>
+kl4, kl5, kl6, kl7<br>
+SalaGim<br>
+15:00--15:45</td></tr>
+<tr><td style="font-size:30%;">15:05</td><td class="lewy"></td></tr>
+<tr><td style="font-size:30%;">15:10</td><td class="lewy"></td></tr>
+<tr><td style="font-size:30%;">15:15</td><td class="lewy"></td><td class="lewy"></td></tr>
+<tr><td style="font-size:30%;">15:20</td><td class="lewy"></td><td class="lewy"></td></tr>
+<tr><td style="font-size:30%;">15:25</td><td class="lewy"></td><td class="lewy"></td></tr>
+<tr><td style="font-size:30%;">15:30</td><td class="lewy"></td><td class="lewy"></td></tr>
+<tr><td style="font-size:30%;">15:35</td><td class="lewy"></td><td class="lewy"></td></tr>
+<tr><td style="font-size:30%;">15:40</td><td class="lewy"></td><td class="lewy"></td></tr>
+<tr><td style="font-size:30%;">15:45</td><td rowspan="3" colspan="4" class="Dyzury lewy">Dyzury<br>
+JagodaNB, AniaK, JuliuszP<br>
+kl4, kl5, kl6, kl7<br>
+<br>
+15:45--16:00</td><td rowspan="3" colspan="2" class="Dyzury lewy">Dyzury<br>
+AgaBu, BartekB<br>
+kl4, kl5, kl6, kl7<br>
+<br>
+15:45--16:00</td><td class="lewy"></td>
+<td></td><td rowspan="3" colspan="3" class="Dyzury lewy">Dyzury<br>
+AgaBu, KingaS<br>
+kl4, kl5, kl6, kl7<br>
+-<br>
+15:45--16:00</td><td rowspan="3" colspan="3" class="WypuszczanieDzieci lewy">WypuszczanieDzieci<br>
+BartekB, DominikaB<br>
+kl4, kl5, kl6, kl7<br>
+-<br>
+15:45--16:00</td></tr>
+<tr><td style="font-size:30%;">15:50</td><td class="lewy"></td>
+<td></td></tr>
+<tr><td style="font-size:30%;">15:55</td><td class="lewy"></td>
+<td></td></tr>
+<tr><td style="font-size:30%;">16:00</td><td rowspan="3" colspan="4" class="WypuszczanieDzieci lewy">WypuszczanieDzieci<br>
+JagodaNB, AniaK<br>
+kl4, kl5, kl6, kl7<br>
+<br>
+16:00--16:15</td><td rowspan="3" colspan="2" class="WypuszczanieDzieci lewy">WypuszczanieDzieci<br>
+AgaBu, BartekB<br>
+kl4, kl5, kl6, kl7<br>
+<br>
+16:00--16:15</td><td class="lewy"></td>
+<td></td><td rowspan="3" colspan="3" class="WypuszczanieDzieci lewy">WypuszczanieDzieci<br>
+AgaBu, KingaS<br>
+kl4, kl5, kl6, kl7<br>
+-<br>
+16:00--16:15</td><td class="lewy"></td>
+<td></td>
+<td></td></tr>
+<tr><td style="font-size:30%;">16:05</td><td class="lewy"></td>
+<td></td><td class="lewy"></td>
+<td></td>
+<td></td></tr>
+<tr><td style="font-size:30%;">16:10</td><td class="lewy"></td>
+<td></td><td class="lewy"></td>
+<td></td>
+<td></td></tr>
+<tr><td style="font-size:30%;">16:15</td><td class="lewy"></td>
+<td></td>
+<td></td>
+<td></td><td class="lewy"></td>
+<td></td><td class="lewy"></td>
+<td></td><td class="lewy"></td>
+<td></td>
+<td></td><td class="lewy"></td>
+<td></td>
+<td></td></tr>
+<tr><td style="font-size:30%;">16:20</td><td class="lewy"></td>
+<td></td>
+<td></td>
+<td></td><td class="lewy"></td>
+<td></td><td class="lewy"></td>
+<td></td><td class="lewy"></td>
+<td></td>
+<td></td><td class="lewy"></td>
+<td></td>
+<td></td></tr>
+<tr><td style="font-size:30%;">16:25</td><td class="lewy"></td>
+<td></td>
+<td></td>
+<td></td><td class="lewy"></td>
+<td></td><td class="lewy"></td>
+<td></td><td class="lewy"></td>
+<td></td>
+<td></td><td class="lewy"></td>
+<td></td>
+<td></td></tr>
+<tr><td style="font-size:30%;">16:30</td><td class="lewy"></td>
+<td></td>
+<td></td>
+<td></td><td class="lewy"></td>
+<td></td><td class="lewy"></td>
+<td></td><td class="lewy"></td>
+<td></td>
+<td></td><td class="lewy"></td>
+<td></td>
+<td></td></tr>
+<tr><td style="font-size:30%;">16:35</td><td class="lewy"></td>
+<td></td>
+<td></td>
+<td></td><td class="lewy"></td>
+<td></td><td class="lewy"></td>
+<td></td><td class="lewy"></td>
+<td></td>
+<td></td><td class="lewy"></td>
+<td></td>
+<td></td></tr>
+<tr><td style="font-size:30%;">16:40</td><td class="lewy"></td>
+<td></td>
+<td></td>
+<td></td><td class="lewy"></td>
+<td></td><td class="lewy"></td>
+<td></td><td class="lewy"></td>
+<td></td>
+<td></td><td class="lewy"></td>
+<td></td>
+<td></td></tr>
+<tr><td style="font-size:30%;">16:45</td><td class="lewy"></td>
+<td></td>
+<td></td>
+<td></td><td class="lewy"></td>
+<td></td><td class="lewy"></td>
+<td></td><td class="lewy"></td>
+<td></td>
+<td></td><td class="lewy"></td>
+<td></td>
+<td></td></tr>
+<tr><td style="font-size:30%;">16:50</td><td class="lewy"></td>
+<td></td>
+<td></td>
+<td></td><td class="lewy"></td>
+<td></td><td class="lewy"></td>
+<td></td><td class="lewy"></td>
+<td></td>
+<td></td><td class="lewy"></td>
+<td></td>
+<td></td></tr>
+<tr><td style="font-size:30%;">16:55</td><td class="lewy"></td>
+<td></td>
+<td></td>
+<td></td><td class="lewy"></td>
+<td></td><td class="lewy"></td>
+<td></td><td class="lewy"></td>
+<td></td>
+<td></td><td class="lewy"></td>
+<td></td>
+<td></td></tr>
+<tr><td style="font-size:30%;">17:00</td><td class="lewy"></td>
+<td></td>
+<td></td>
+<td></td><td class="lewy"></td>
+<td></td><td class="lewy"></td>
+<td></td><td class="lewy"></td>
+<td></td>
+<td></td><td class="lewy"></td>
+<td></td>
+<td></td></tr>
+<tr><td style="font-size:30%;">17:05</td><td class="lewy"></td>
+<td></td>
+<td></td>
+<td></td><td class="lewy"></td>
+<td></td><td class="lewy"></td>
+<td></td><td class="lewy"></td>
+<td></td>
+<td></td><td class="lewy"></td>
+<td></td>
+<td></td></tr>
+<tr><td style="font-size:30%;">17:10</td><td class="lewy"></td>
+<td></td>
+<td></td>
+<td></td><td class="lewy"></td>
+<td></td><td class="lewy"></td>
+<td></td><td class="lewy"></td>
+<td></td>
+<td></td><td class="lewy"></td>
+<td></td>
+<td></td></tr>
+<tr><td style="font-size:30%;">17:15</td><td class="lewy"></td>
+<td></td>
+<td></td>
+<td></td><td class="lewy"></td>
+<td></td><td class="lewy"></td>
+<td></td><td class="lewy"></td>
+<td></td>
+<td></td><td class="lewy"></td>
+<td></td>
+<td></td></tr>
+<tr><td style="font-size:30%;">17:20</td><td class="lewy"></td>
+<td></td>
+<td></td>
+<td></td><td class="lewy"></td>
+<td></td><td class="lewy"></td>
+<td></td><td class="lewy"></td>
+<td></td>
+<td></td><td class="lewy"></td>
+<td></td>
+<td></td></tr>
+<tr><td style="font-size:30%;">17:25</td><td class="lewy"></td>
+<td></td>
+<td></td>
+<td></td><td class="lewy"></td>
+<td></td><td class="lewy"></td>
+<td></td><td class="lewy"></td>
+<td></td>
+<td></td><td class="lewy"></td>
+<td></td>
+<td></td></tr>
+</table>
+<!-- <div style="height:10%; padding:10%;">&nbsp;</div><div style="height:10%;">&nbsp;</div> -->
+</body>
+</html>

@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta http-equiv="content-language" content="pl">
+<style>
+table, th, td {
+  border: 1px solid #666;
+  border-collapse: collapse;
+}
+td.lewy {
+  border-left: 6px solid #444;
+}
+th.lewy {
+  border-left: 6px solid #444;
+}
+td.podlewy {
+  border-left: 2px solid black;
+}
+th.podlewy {
+  border-left: 2px solid black;
+}
+div#okienko {
+    position: fixed; top: 70%; bottom: 100%;
+    border: 1px solid #660;
+    background-color: #ee0;
+    display: block;
+    height: 300px;
+    width: 100%;
+}
+div#lewe {
+    width:25%;
+    display:block;
+    float:left;
+    position:relative;
+}
+div#prawe {
+    width:70%;
+    display:block;
+    float:left;
+    text-align:left;
+    position:relative;
+}
+span.blad {
+    color:#f00;
+}
+label {
+    margin: 5px;
+}
+.odsun {
+    padding-bottom: 10px;
+}
+
+</style>
+</head>
+<body>
+<h3> AgaW -- 30m, wg umowy: 0</h3><ul>
+<li><b>cz: 30m</b>: 13:45-14:15
+</li>
+</ul>
+<h3> AlaB -- 1h 30m, wg umowy: 0</h3><ul>
+<li><b>wt: 1h 30m</b>: 14:15-15:45
+</li>
+</ul>
+<h3> AniaK -- 1h 30m, wg umowy: 0</h3><ul>
+<li><b>pn: 1h 30m</b>: 14:15-15:45
+</li>
+</ul>
+<h3> BartekB -- 1h 45m, wg umowy: 0</h3><ul>
+<li><b>pn: 1h 30m</b>: 14:15-15:45
+</li>
+<li><b>śr: 15m</b>: 16:00-16:15
+</li>
+</ul>
+<h3> DominikaB -- 1h 30m, wg umowy: 0</h3><ul>
+<li><b>pt: 1h 30m</b>: 14:15-15:45
+</li>
+</ul>
+<h3> JuliuszP -- 1h 30m, wg umowy: 0</h3><ul>
+<li><b>pn: 1h 30m</b>: 14:15-15:45
+</li>
+</ul>
+<h3> KingaS -- 15m, wg umowy: 0</h3><ul>
+<li><b>śr: 15m</b>: 10:15-10:30
+</li>
+</ul>
+<h3> WeronikaK -- 45m, wg umowy: 0</h3><ul>
+<li><b>wt: 45m</b>: 11:15-12:00
+</li>
+</ul>
+<h3>AgaBu -- 27h 45m, wg umowy: 0</h3><ul>
+<li><b>pn: 6h</b>: 9:00-15:00
+</li>
+<li><b>wt: 7h 15m</b>: 9:00-16:15
+<br><span class="blad">okienka: 13:00-13:45</span>
+</li>
+<li><b>śr: 3h 30m</b>: 9:30-13:00
+<br><span class="blad">okienka: 10:30-11:30</span>
+</li>
+<li><b>cz: 7h 15m</b>: 9:00-16:15
+<br><span class="blad">okienka: 13:00-13:45</span>
+</li>
+<li><b>pt: 3h 45m</b>: 9:30-13:15
+<br><span class="blad">okienka: 11:15-12:30</span>
+</li>
+</ul>
+<h3>AgaW -- 28h 15m, wg umowy: 0</h3><ul>
+<li><b>pn: 4h 30m</b>: 9:15-13:45
+</li>
+<li><b>wt: 5h 15m</b>: 10:30-15:45
+</li>
+<li><b>śr: 7h 15m</b>: 8:30-15:45
+</li>
+<li><b>cz: 4h</b>: 9:30-13:30
+</li>
+<li><b>pt: 7h 15m</b>: 8:30-15:45
+</li>
+</ul>
+<h3>AgataK -- 14h 10m, wg umowy: 0</h3><ul>
+<li><b>pn: 3h 15m</b>: 10:30-13:45
+<br><span class="blad">bilokacje: 11:50-12:10</span>
+</li>
+<li><b>wt: 3h 10m</b>: 10:30-13:40
+</li>
+<li><b>śr: 3h 15m</b>: 10:30-13:45
+<br><span class="blad">bilokacje: 11:10-11:45</span>
+</li>
+<li><b>cz: 4h 30m</b>: 9:00-13:30
+</li>
+</ul>
+<h3>AgnieszkaZ -- 2h 15m, wg umowy: 0</h3><ul>
+<li><b>cz: 2h 15m</b>: 13:45-16:00
+</li>
+</ul>
+<h3>AlaB -- 17h 30m, wg umowy: 0</h3><ul>
+<li><b>wt: 5h 15m</b>: 9:00-14:15
+<br><span class="blad">okienka: 12:30-13:45</span>
+</li>
+<li><b>śr: 4h</b>: 8:30-12:30
+</li>
+<li><b>cz: 5h</b>: 9:15-14:15
+<br><span class="blad">okienka: 12:30-13:45</span>
+</li>
+<li><b>pt: 3h 15m</b>: 9:15-12:30
+</li>
+</ul>
+<h3>AlicjaG -- 7h 30m, wg umowy: 0</h3><ul>
+<li><b>pn: 1h 15m</b>: 13:45-15:00
+</li>
+<li><b>wt: 2h</b>: 15:00-17:00
+</li>
+<li><b>śr: 45m</b>: 11:45-12:30
+</li>
+<li><b>cz: 3h</b>: 12:00-15:00
+<br><span class="blad">okienka: 12:45-14:00</span>
+</li>
+<li><b>pt: 30m</b>: 12:45-13:15
+</li>
+</ul>
+<h3>AniaK -- 4h 30m, wg umowy: 0</h3><ul>
+<li><b>pn: 30m</b>: 15:45-16:15
+</li>
+<li><b>wt: 4h</b>: 11:45-15:45
+</li>
+</ul>
+<h3>AniaS -- 33h, wg umowy: 0</h3><ul>
+<li><b>pn: 7h</b>: 7:30-14:30
+</li>
+<li><b>wt: 7h</b>: 7:30-14:30
+</li>
+<li><b>śr: 7h</b>: 7:30-14:30
+</li>
+<li><b>cz: 6h</b>: 7:30-13:30
+</li>
+<li><b>pt: 6h</b>: 7:30-13:30
+</li>
+</ul>
+<h3>AniaZ -- 10h, wg umowy: 0</h3><ul>
+<li><b>pn: 2h 30m</b>: 15:00-17:30
+</li>
+<li><b>wt: 2h 30m</b>: 15:00-17:30
+</li>
+<li><b>śr: 2h 30m</b>: 15:00-17:30
+</li>
+<li><b>pt: 2h 30m</b>: 15:00-17:30
+</li>
+</ul>
+<h3>AsiaS -- 31h 30m, wg umowy: 0</h3><ul>
+<li><b>pn: 7h 30m</b>: 7:30-15:00
+</li>
+<li><b>wt: 7h</b>: 8:00-15:00
+</li>
+<li><b>śr: 5h 30m</b>: 8:15-13:45
+</li>
+<li><b>cz: 5h 45m</b>: 8:00-13:45
+</li>
+<li><b>pt: 5h 45m</b>: 8:00-13:45
+</li>
+</ul>
+<h3>BartekB -- 15h 50m, wg umowy: 0</h3><ul>
+<li><b>pn: 45m</b>: 13:00-13:45
+</li>
+<li><b>wt: 3h 30m</b>: 12:45-16:15
+<br><span class="blad">okienka: 13:30-14:15</span>
+</li>
+<li><b>śr: 1h 45m</b>: 14:15-16:00
+</li>
+<li><b>cz: 6h 20m</b>: 8:00-14:20
+<br><span class="blad">okienka: 10:15-12:45</span>
+<br><span class="blad">bilokacje: 8:00-8:30</span>
+</li>
+<li><b>pt: 3h 30m</b>: 12:30-16:00
+<br><span class="blad">bilokacje: 13:15-14:00</span>
+</li>
+</ul>
+<h3>BartekT -- 4h 40m, wg umowy: 0</h3><ul>
+<li><b>pn: 2h 25m</b>: 13:35-16:00
+</li>
+<li><b>cz: 1h 30m</b>: 14:30-16:00
+</li>
+<li><b>pt: 45m</b>: 14:30-15:15
+</li>
+</ul>
+<h3>BeataD -- 30h, wg umowy: 0</h3><ul>
+<li><b>pn: 6h 15m</b>: 8:00-14:15
+<br><span class="blad">okienka: 9:15-10:00, 10:30-11:10</span>
+<br><span class="blad">bilokacje: 11:15-11:50</span>
+</li>
+<li><b>wt: 5h 40m</b>: 8:00-13:40
+<br><span class="blad">okienka: 10:30-11:50</span>
+</li>
+<li><b>śr: 7h 45m</b>: 7:30-15:15
+<br><span class="blad">okienka: 10:15-11:10, 11:50-13:00, 13:45-14:30</span>
+<br><span class="blad">bilokacje: 9:30-10:00, 11:10-11:45</span>
+</li>
+<li><b>cz: 6h 20m</b>: 8:10-14:30
+<br><span class="blad">okienka: 8:55-9:45, 10:45-11:50</span>
+</li>
+<li><b>pt: 4h</b>: 10:30-14:30
+<br><span class="blad">okienka: 11:10-11:45</span>
+</li>
+</ul>
+<h3>BeataK -- 7h, wg umowy: 0</h3><ul>
+<li><b>cz: 7h</b>: 9:00-16:00
+<br><span class="blad">okienka: 12:30-14:30</span>
+<br><span class="blad">bilokacje: 9:00-10:30</span>
+</li>
+</ul>
+<h3>DominikaB -- 31h 15m, wg umowy: 0</h3><ul>
+<li><b>pn: 7h</b>: 8:00-15:00
+<br><span class="blad">okienka: 9:30-10:15, 10:30-12:30</span>
+<br><span class="blad">bilokacje: 8:30-9:15</span>
+</li>
+<li><b>wt: 5h 30m</b>: 7:30-13:00
+<br><span class="blad">okienka: 10:30-12:30</span>
+<br><span class="blad">bilokacje: 8:30-9:15</span>
+</li>
+<li><b>śr: 6h</b>: 10:15-16:15
+<br><span class="blad">okienka: 10:30-12:30</span>
+</li>
+<li><b>cz: 5h 15m</b>: 8:30-13:45
+<br><span class="blad">okienka: 10:30-12:30</span>
+<br><span class="blad">bilokacje: 8:30-9:15</span>
+</li>
+<li><b>pt: 7h 30m</b>: 8:30-16:00
+<br><span class="blad">okienka: 14:00-15:45</span>
+<br><span class="blad">bilokacje: 8:30-9:15, 12:30-13:15</span>
+</li>
+</ul>
+<h3>EdytaB -- 2h 30m, wg umowy: 0</h3><ul>
+<li><b>pn: 45m</b>: 14:30-15:15
+</li>
+<li><b>śr: 1h 45m</b>: 13:30-15:15
+</li>
+</ul>
+<h3>Emilia -- 3h 15m, wg umowy: 0</h3><ul>
+<li><b>cz: 3h 15m</b>: 12:45-16:00
+<br><span class="blad">bilokacje: 14:30-16:00</span>
+</li>
+</ul>
+<h3>HelenaM -- 15h, wg umowy: 0</h3><ul>
+<li><b>pn: 3h 30m</b>: 14:00-17:30
+</li>
+<li><b>wt: 2h 45m</b>: 14:45-17:30
+</li>
+<li><b>śr: 2h 45m</b>: 14:45-17:30
+</li>
+<li><b>cz: 3h</b>: 14:30-17:30
+</li>
+<li><b>pt: 3h</b>: 14:30-17:30
+</li>
+</ul>
+<h3>JagodaNB -- 3h 30m, wg umowy: 0</h3><ul>
+<li><b>pn: 3h 30m</b>: 12:45-16:15
+</li>
+</ul>
+<h3>JuliaD -- 30h, wg umowy: 0</h3><ul>
+<li><b>pn: 7h</b>: 8:00-15:00
+</li>
+<li><b>wt: 5h 30m</b>: 8:15-13:45
+</li>
+<li><b>śr: 6h 15m</b>: 7:30-13:45
+</li>
+<li><b>cz: 6h 30m</b>: 8:30-15:00
+</li>
+<li><b>pt: 4h 45m</b>: 8:00-12:45
+</li>
+</ul>
+<h3>JuliuszP -- 3h, wg umowy: 0</h3><ul>
+<li><b>pn: 2h 15m</b>: 13:45-16:00
+<br><span class="blad">okienka: 14:15-15:45</span>
+</li>
+<li><b>śr: 45m</b>: 14:15-15:00
+</li>
+</ul>
+<h3>KamilaPK -- 31h 30m, wg umowy: 0</h3><ul>
+<li><b>pn: 7h</b>: 8:00-15:00
+</li>
+<li><b>wt: 4h 45m</b>: 7:30-12:15
+</li>
+<li><b>śr: 7h</b>: 8:00-15:00
+</li>
+<li><b>cz: 6h 45m</b>: 8:15-15:00
+</li>
+<li><b>pt: 6h</b>: 8:00-14:00
+</li>
+</ul>
+<h3>Karolina -- 32h, wg umowy: 0</h3><ul>
+<li><b>pn: 6h 30m</b>: 8:30-15:00
+</li>
+<li><b>wt: 7h 30m</b>: 8:30-16:00
+</li>
+<li><b>śr: 6h 30m</b>: 8:30-15:00
+</li>
+<li><b>cz: 6h 30m</b>: 8:30-15:00
+</li>
+<li><b>pt: 5h</b>: 8:30-13:30
+</li>
+</ul>
+<h3>KarolinaJK -- 30h, wg umowy: 0</h3><ul>
+<li><b>pn: 6h</b>: 11:30-17:30
+</li>
+<li><b>wt: 6h</b>: 11:30-17:30
+</li>
+<li><b>śr: 6h</b>: 11:30-17:30
+</li>
+<li><b>cz: 6h</b>: 11:30-17:30
+</li>
+<li><b>pt: 6h</b>: 11:30-17:30
+</li>
+</ul>
+<h3>KarolinaS -- 3h 55m, wg umowy: 0</h3><ul>
+<li><b>pn: 1h 35m</b>: 8:10-9:45
+</li>
+<li><b>pt: 2h 20m</b>: 8:10-10:30
+</li>
+</ul>
+<h3>Kasia -- 3h 30m, wg umowy: 0</h3><ul>
+<li><b>cz: 3h 30m</b>: 9:00-12:30
+</li>
+</ul>
+<h3>KasiaD -- 22h 10m, wg umowy: 0</h3><ul>
+<li><b>pn: 5h 20m</b>: 8:10-13:30
+<br><span class="blad">okienka: 10:30-11:50</span>
+</li>
+<li><b>śr: 6h 10m</b>: 8:10-14:20
+<br><span class="blad">okienka: 9:40-11:50</span>
+<br><span class="blad">bilokacje: 8:10-9:40</span>
+</li>
+<li><b>cz: 5h 20m</b>: 8:10-13:30
+<br><span class="blad">okienka: 8:55-11:00</span>
+</li>
+<li><b>pt: 5h 20m</b>: 8:10-13:30
+<br><span class="blad">okienka: 8:55-11:00</span>
+</li>
+</ul>
+<h3>KingaM -- 30h 30m, wg umowy: 0</h3><ul>
+<li><b>pn: 7h 30m</b>: 7:30-15:00
+</li>
+<li><b>wt: 3h 30m</b>: 10:15-13:45
+</li>
+<li><b>śr: 7h 45m</b>: 8:00-15:45
+<br><span class="blad">okienka: 9:30-10:30, 11:15-12:30, 13:00-14:15</span>
+</li>
+<li><b>cz: 6h 30m</b>: 8:30-15:00
+<br><span class="blad">bilokacje: 10:15-10:30</span>
+</li>
+<li><b>pt: 5h 15m</b>: 8:00-13:15
+<br><span class="blad">okienka: 9:30-10:15, 11:15-12:00</span>
+</li>
+</ul>
+<h3>KingaS -- 31h 30m, wg umowy: 0</h3><ul>
+<li><b>pn: 6h 30m</b>: 8:30-15:00
+<br><span class="blad">bilokacje: 9:00-10:15</span>
+</li>
+<li><b>wt: 5h 45m</b>: 8:30-14:15
+</li>
+<li><b>śr: 5h 45m</b>: 8:00-13:45
+</li>
+<li><b>cz: 7h 45m</b>: 8:30-16:15
+<br><span class="blad">okienka: 13:00-13:45, 14:15-15:00</span>
+<br><span class="blad">bilokacje: 10:15-10:30</span>
+</li>
+<li><b>pt: 5h 45m</b>: 7:30-13:15
+<br><span class="blad">bilokacje: 12:30-13:15</span>
+</li>
+</ul>
+<h3>KlaudiaS -- 35h, wg umowy: 0</h3><ul>
+<li><b>pn: 7h</b>: 8:30-15:30
+</li>
+<li><b>wt: 7h</b>: 8:30-15:30
+</li>
+<li><b>śr: 7h</b>: 8:30-15:30
+</li>
+<li><b>cz: 7h</b>: 8:30-15:30
+</li>
+<li><b>pt: 7h</b>: 8:30-15:30
+</li>
+</ul>
+<h3>KubaZ -- 4h, wg umowy: 0</h3><ul>
+<li><b>śr: 1h 30m</b>: 8:10-9:40
+<br><span class="blad">bilokacje: 8:10-9:40</span>
+</li>
+<li><b>pt: 2h 30m</b>: 8:00-10:30
+<br><span class="blad">bilokacje: 9:00-10:30</span>
+</li>
+</ul>
+<h3>Laurence -- 21h 20m, wg umowy: 0</h3><ul>
+<li><b>pn: 4h 15m</b>: 11:00-15:15
+</li>
+<li><b>wt: 4h 15m</b>: 11:00-15:15
+</li>
+<li><b>śr: 4h 15m</b>: 11:00-15:15
+</li>
+<li><b>cz: 5h 15m</b>: 10:30-15:45
+<br><span class="blad">okienka: 11:00-12:30, 13:30-14:15</span>
+</li>
+<li><b>pt: 3h 20m</b>: 11:00-14:20
+<br><span class="blad">okienka: 12:35-13:35</span>
+</li>
+</ul>
+<h3>MagdaD -- 17h 50m, wg umowy: 0</h3><ul>
+<li><b>pn: 3h 35m</b>: 9:00-12:35
+<br><span class="blad">bilokacje: 9:45-10:30</span>
+</li>
+<li><b>wt: 3h 35m</b>: 9:00-12:35
+</li>
+<li><b>śr: 4h 35m</b>: 9:45-14:20
+<br><span class="blad">okienka: 11:45-12:45</span>
+</li>
+<li><b>cz: 3h 35m</b>: 8:10-11:45
+<br><span class="blad">okienka: 8:55-11:00</span>
+</li>
+<li><b>pt: 2h 30m</b>: 11:00-13:30
+</li>
+</ul>
+<h3>MagdaSz -- 29h 30m, wg umowy: 0</h3><ul>
+<li><b>pn: 7h</b>: 8:00-15:00
+</li>
+<li><b>wt: 6h 30m</b>: 8:30-15:00
+</li>
+<li><b>śr: 5h</b>: 8:00-13:00
+</li>
+<li><b>cz: 5h 15m</b>: 8:00-13:15
+</li>
+<li><b>pt: 5h 45m</b>: 7:30-13:15
+</li>
+</ul>
+<h3>MajaB -- 20h, wg umowy: 0</h3><ul>
+<li><b>pn: 4h</b>: 8:30-12:30
+</li>
+<li><b>wt: 4h</b>: 8:30-12:30
+</li>
+<li><b>śr: 4h</b>: 8:30-12:30
+</li>
+<li><b>cz: 4h</b>: 8:30-12:30
+</li>
+<li><b>pt: 4h</b>: 8:30-12:30
+</li>
+</ul>
+<h3>MartaL -- 21h 05m, wg umowy: 0</h3><ul>
+<li><b>pn: 4h 15m</b>: 8:00-12:15
+</li>
+<li><b>wt: 5h 30m</b>: 8:00-13:30
+</li>
+<li><b>śr: 5h 30m</b>: 8:00-13:30
+<br><span class="blad">okienka: 12:00-12:45</span>
+</li>
+<li><b>cz: 4h</b>: 8:00-12:00
+</li>
+<li><b>pt: 1h 50m</b>: 8:45-10:35
+<br><span class="blad">bilokacje: 8:45-10:35</span>
+</li>
+</ul>
+<h3>MartynaB -- 1h, wg umowy: 0</h3><ul>
+<li><b>cz: 1h</b>: 7:30-8:30
+</li>
+</ul>
+<h3>MarzenaW -- 4h, wg umowy: 0</h3><ul>
+<li><b>pn: 3h</b>: 12:00-15:00
+</li>
+<li><b>cz: 1h</b>: 14:00-15:00
+</li>
+</ul>
+<h3>OlaM -- 4h, wg umowy: 0</h3><ul>
+<li><b>wt: 4h</b>: 8:30-12:30
+</li>
+</ul>
+<h3>OlaT -- 27h, wg umowy: 0</h3><ul>
+<li><b>pn: 5h</b>: 7:30-12:30
+</li>
+<li><b>wt: 6h</b>: 7:30-13:30
+</li>
+<li><b>śr: 6h</b>: 7:30-13:30
+</li>
+<li><b>cz: 5h</b>: 7:30-12:30
+</li>
+<li><b>pt: 5h</b>: 7:30-12:30
+</li>
+</ul>
+<h3>OlaZ -- 4h 45m, wg umowy: 0</h3><ul>
+<li><b>wt: 1h 30m</b>: 14:30-16:00
+</li>
+<li><b>śr: 45m</b>: 9:40-10:25
+</li>
+<li><b>pt: 2h 30m</b>: 12:45-15:15
+</li>
+</ul>
+<h3>PaulinaM -- 31h 30m, wg umowy: 0</h3><ul>
+<li><b>pn: 7h</b>: 10:00-17:00
+<br><span class="blad">bilokacje: 13:45-15:00</span>
+</li>
+<li><b>wt: 5h</b>: 8:00-13:00
+</li>
+<li><b>śr: 8h</b>: 9:00-17:00
+<br><span class="blad">bilokacje: 13:45-15:00</span>
+</li>
+<li><b>cz: 5h 30m</b>: 7:30-13:00
+</li>
+<li><b>pt: 6h</b>: 9:00-15:00
+<br><span class="blad">bilokacje: 14:00-15:00</span>
+</li>
+</ul>
+<h3>PawełU -- 23h, wg umowy: 0</h3><ul>
+<li><b>pn: 2h</b>: 13:00-15:00
+</li>
+<li><b>wt: 8h</b>: 9:00-17:00
+<br><span class="blad">okienka: 11:00-13:00, 13:45-15:00</span>
+<br><span class="blad">bilokacje: 9:00-10:30, 15:00-15:45, 16:00-17:00</span>
+</li>
+<li><b>śr: 2h</b>: 11:45-13:45
+</li>
+<li><b>cz: 8h 30m</b>: 9:00-17:30
+</li>
+<li><b>pt: 2h 30m</b>: 12:30-15:00
+<br><span class="blad">okienka: 13:15-14:00</span>
+<br><span class="blad">bilokacje: 14:00-15:00</span>
+</li>
+</ul>
+<h3>TomekK -- 15h 55m, wg umowy: 0</h3><ul>
+<li><b>pn: 5h</b>: 11:00-16:00
+<br><span class="blad">okienka: 11:45-12:45</span>
+</li>
+<li><b>wt: 7h</b>: 9:00-16:00
+</li>
+<li><b>cz: 3h 55m</b>: 7:45-11:40
+</li>
+</ul>
+<h3>Tymek -- 30h, wg umowy: 0</h3><ul>
+<li><b>pn: 6h 30m</b>: 8:30-15:00
+</li>
+<li><b>wt: 5h 30m</b>: 8:30-14:00
+</li>
+<li><b>śr: 5h 30m</b>: 8:30-14:00
+</li>
+<li><b>cz: 6h</b>: 8:30-14:30
+</li>
+<li><b>pt: 6h 30m</b>: 8:30-15:00
+</li>
+</ul>
+<h3>WeronikaK -- 28h 45m, wg umowy: 0</h3><ul>
+<li><b>pn: 5h 15m</b>: 8:30-13:45
+<br><span class="blad">okienka: 12:10-12:55</span>
+</li>
+<li><b>wt: 5h</b>: 10:00-15:00
+<br><span class="blad">okienka: 11:10-12:05</span>
+</li>
+<li><b>śr: 5h 45m</b>: 8:30-14:15
+<br><span class="blad">okienka: 9:15-10:30, 11:50-13:00</span>
+<br><span class="blad">bilokacje: 11:10-11:45</span>
+</li>
+<li><b>cz: 6h 15m</b>: 9:45-16:00
+<br><span class="blad">okienka: 10:45-12:30</span>
+</li>
+<li><b>pt: 6h 30m</b>: 8:00-14:30
+<br><span class="blad">okienka: 10:30-11:10</span>
+</li>
+</ul>
+<!-- <div style="height:10%; padding:10%;">&nbsp;</div><div style="height:10%;">&nbsp;</div> -->
+</body>
+</html>

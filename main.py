@@ -7,10 +7,6 @@ app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 
-@app.get("/")
-async def read_root():
-    return {"message": "Przejdź do /static/index.html, aby zobaczyć stronę"}
-
 @app.post("/uploadfile/")
 async def upload_file(file: UploadFile = File(...)):
     file_location = f"files/{file.filename}"
