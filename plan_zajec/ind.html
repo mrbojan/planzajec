@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta charset="UTF-8">
+<title>Plan</title>
+</head>
+<body>
+  <h1>Plany zajęć</h1>
+  <p>Wygenerowano używając pliku <code>PLIKZRODLOWY</code></p>
+
+  <h2>Według dni</h2>
+  <h3 style="text-indent:30px;">nauczycielami</h3>
+  <p style="text-indent:30px;">
+    <a href="/tabela____dzien___pn___kto.html">poniedziałek</a> &nbsp;&nbsp;
+    <a href="/tabela____dzien___wt___kto.html">wtorek</a> &nbsp;&nbsp;
+    <a href="/tabela____dzien___sr___kto.html">środa</a> &nbsp;&nbsp;
+    <a href="/tabela____dzien___cz___kto.html">czwartek</a> &nbsp;&nbsp;
+    <a href="/tabela____dzien___pt___kto.html">piątek</a>
+  </p>
+  <h3 style="text-indent:30px;">klasami</h3>
+  <p style="text-indent:30px;">
+    <a href="/tabela____dzien___pn___grupy.html">poniedziałek</a> &nbsp;&nbsp;
+    <a href="/tabela____dzien___wt___grupy.html">wtorek</a> &nbsp;&nbsp;
+    <a href="/tabela____dzien___sr___grupy.html">środa</a> &nbsp;&nbsp;
+    <a href="/tabela____dzien___cz___grupy.html">czwartek</a> &nbsp;&nbsp;
+    <a href="/tabela____dzien___pt___grupy.html">piątek</a>
+  </p>
+
+  <h2>Dla nauczycieli</h2>
+  NNN
+
+  <p><a href="/raport.html">Raport</a></p>
+
+  <p><a href="/plan_zajec.zip">Plan do przeglądania w pliku zip</a></p>
+
+  <h2>Dla uczniów</h2>
+  UUU
+
+  <br>
+  <a href="/78tabela____dzien___grupy___kl4___kl5___kl6.html">kl4, kl5 i kl6</a> &nbsp;&nbsp;
+  <a href="/78tabela____dzien___grupy___kl7___kl8.html">kl7 i kl8</a>
+
+&nbsp;&nbsp;
+  <a href="/78tabela____dzien___grupy___1LO___2LO.html">kl1 LO i kl2 LO</a>
+
+  <h3>Wiele klas na jednym planie:</h3>
+  <p>
+   CHECKBOXYUCZNIOW
+  &nbsp;&nbsp;&nbsp; --&gt;   &nbsp;&nbsp;&nbsp;
+<a id="linkklas" href="/link">KLIKNIJ tu</a> (uwaga: to nie będzie działało po ściągnięciu na dysk)
+<script>
+  function id(co){
+    return document.getElementById(co);
+}
+  function zrobLink()
+  {
+      var idki = document.getElementsByClassName('linku');
+      var wartosci = "";
+      for (var i=0; i< idki.length; i++ ) {
+	  try{
+	  if (id(idki[i].id).checked) {
+              wartosci += "___" + idki[i].id.substring(1);
+	  }}catch(e){};
+      }
+      id("linkklas").setAttribute("href", "/78tabela____dzien___grupy" + wartosci + ".html");
+  }
+  window.addEventListener('load', zrobLink);
+</script>
+  </p>
+  
+  <h2>Przedmioty</h2>
+  PPP
+
+  <h2>Miejsca</h2>
+  MMM
+  
+</body>
+
+</html>
+
